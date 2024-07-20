@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", true);
 
-module.exports.connectoMongoDB = async () => {
+module.exports.connectToMongoDB = async () => {
     try {
         mongoose.connect(process.env.MONGODB_URL)
         console.log("Connected to MongoDB");
