@@ -7,4 +7,7 @@ router.post("/", postController.addPosts)
 router.get("/:id", postController.onePost)
 router.get("/search/:query", postController.searchPost)
 
+router.delete("/:id", postController.deletedPost);
+router.put("/:id", postController.editPost);
+
 module.exports = router;

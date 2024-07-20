@@ -48,3 +48,40 @@ module.exports.addPosts = async (req, res) => {
         res.status(400).json(err);
     }
 };
+
+//delete post
+module.exports.deletedPost = async (req, res) => {
+    if (!ObjectID.isValid(req.params.id)) return res.status(400).send("ID unknown: " + req.params.id);
+
+    try {
+        const result = await postModel.findByIdAndDelete(req.params.id);
+        if (!result) return res.status(404).send("No post found with this ID: " + req.params.id);
+        res.status(200).send("Post deleted successfully");
+    } catch (err) {
+        res.status(400).send("Error to delete post: " + err);
+    }
+};
+
+//edit post
+module.exports.editPost = async (req, res) => {
+    if (!ObjectID.isValid(req.params.id)) return res.status(400).send("ID unknown: " + req.params.id);
+
+    const updateFields = {
+        title: req.body.title,
+        author: req.body.author,
+        category: req.body.category,
+        content: req.body.content,
+    };
+
+    try {
+        const result = await postModel.findByIdAndUpdate(
+            req.params.id,
+            { $set: updateFields },
+            { new: true, runValidators: true }
+        );
+        if (!result) return res.status(404).send("No post found with this ID: " + req.params.id);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(400).json("Error to update post: " + err);
+    }
+};
