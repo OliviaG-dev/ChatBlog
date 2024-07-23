@@ -1,4 +1,4 @@
-import './vav.css';
+import './nav.css';
 
 function Nav() {
   return (
