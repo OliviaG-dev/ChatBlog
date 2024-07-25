@@ -38,7 +38,8 @@ module.exports.addPosts = async (req, res) => {
     const newPost = new postModel({
         title: req.body.title,
         author: req.body.author,
-        category: req.body.content,
+        category: req.body.category,
+        content: req.body.content,
     });
 
     try {

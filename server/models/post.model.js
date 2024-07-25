@@ -19,7 +19,7 @@ const postSchema = new mongoose.Schema(
         },
         content: {
             type: String,
-            maxLength:20000,
+            maxLength:2000000,
         },
     },
 //Ajout une date de création pour chaque post

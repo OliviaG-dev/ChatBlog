@@ -1,0 +1,105 @@
+.card_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.1rem solid #9b733f;
+    border-radius: 10px;
+    margin: 3rem 0;
+    padding: 0.5rem;
+}
+
+.card_title {
+    color: #b46c08;
+}
+
+.card_top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin: 1rem 0;
+}
+
+.card_top_author-span {
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+}
+
+.card_top_author {
+    font-style: italic;
+    color: rgb(83, 81, 81);
+}
+
+.card_top_tag {
+    border: 0.1rem black solid;
+    border-radius: 3px;
+    padding: 0.2rem 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1ch;
+}
+
+/************* COLOR_TAG ****************/
+
+.card_top_tag.Science-fiction {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.card_top_tag.Histoire {
+    background-color: #e94e77;
+    color: #fff;
+}
+
+.card_top_tag.Médias-Sociaux {
+    background-color: #f5a623;
+    color: #fff;
+}
+
+.card_top_tag.Bien-être {
+    background-color: #7ed321;
+    color: #fff;
+}
+
+.card_top_tag.Philosophie {
+    background-color: #50e3c2;
+    color: #fff;
+}
+
+.card_top_tag.Psychologie-Animale {
+    background-color: #b8e986;
+    color: #000;
+}
+
+.card_top_tag.Technologie {
+    background-color: #d0021b;
+    color: #fff;
+}
+
+.card_top_tag.Science {
+    background-color: #8b572a;
+    color: #fff;
+}
+
+/************* COLOR_TAG FINISH****************/
+
+.card_content {
+    max-width: 100ch;
+    text-align:left;
+    margin-bottom: 2rem;
+}
+
+.card_date {
+    width: 100%;
+    font-style: italic;
+    color: rgb(83, 81, 81);
+    display: flex;
+    justify-content: end;
+    font-size: 0.8em;
+}
