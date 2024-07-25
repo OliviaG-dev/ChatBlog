@@ -1,11 +1,26 @@
 import './page404.css';
+import nofound from '../../assets/nofound.gif';
+import { NavLink } from 'react-router-dom';
 
-function Page404() {
+const Page404 = () => {
   return (
-    <>
-      <h1>Je Suis une Page404</h1>
-    </>
+    <div className="wrapper_nofound">
+      <div className="nofound">
+        <h1>Page non trouvée</h1>
+        <div className="container_nofound">
+          <img src={nofound} alt="teemo" className="nofound_image" />
+          <div className="nofound_text">
+            <p>Revenir à la page d'accueil</p>
+            <button className="button_retour--nofound">
+              <NavLink to="/" className="link_retour">
+                ici
+              </NavLink>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Page404;

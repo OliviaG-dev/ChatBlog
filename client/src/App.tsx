@@ -14,7 +14,7 @@ function App() {
         <Route path="/:id" element={<Post />} />
         <Route path="/search" element={<Search />} />
         <Route path="/add" element={<Add />} />
-        <Route path="*" element={<Page404 />} />
+        <Route path="/404" element={<Page404 />} />
       </Routes>
     </>
   );
