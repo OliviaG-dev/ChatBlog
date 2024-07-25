@@ -2,6 +2,11 @@
 const express = require("express");
 const app = express();
 
+// Middlewares
+const cors = require('cors');
+app.use(cors());
+app.use(express.json());
+
 //dotenv
 require("dotenv").config({path: "./config/.env"});
 
