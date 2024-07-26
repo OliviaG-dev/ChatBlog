@@ -1,6 +1,5 @@
 .wrapper_nofound {
-  height: 100vh;
-  display: flex;
+  margin-top: 5rem;
 }
 
 .nofound {
@@ -11,7 +10,7 @@
   align-items: center;
 }
 
-.nofound h1 {
+.nofound h2 {
   font-size: 3em;
   margin-bottom: 2rem
 }

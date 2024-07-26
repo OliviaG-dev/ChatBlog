@@ -2,34 +2,35 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0.5rem;
+    justify-content: center;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 0.1rem solid #9b733f;
+    border: 1px solid #9b733f;
     border-radius: 10px;
     margin: 3rem 0;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
+    box-shadow: 0px 1px 10px 1px rgba(78, 78, 78, 0.5);
 }
 
 .card_title {
-    color: #b46c08;
+    letter-spacing: 0.08ch;
 }
 
 .card_top {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 0 2rem;
     margin: 1rem 0;
 }
 
 .card_top_author-span {
     font-weight: 600;
     font-style: normal;
-    color: black;
+    color: #1c1c1c;
 }
 
 .card_top_author {
@@ -38,53 +39,52 @@
 }
 
 .card_top_tag {
-    border: 0.1rem black solid;
-    border-radius: 3px;
+    border: solid 2px;
+    border-radius: 5px;
     padding: 0.2rem 1rem;
-    font-weight: 500;
     letter-spacing: 0.1ch;
 }
 
 /************* COLOR_TAG ****************/
 
 .card_top_tag.Science-fiction {
-    background-color: #4a90e2;
-    color: #fff;
+    background: linear-gradient(to bottom, #c1d7f1, #9dbde2);
+    border-color: #9dbde2;
 }
 
 .card_top_tag.Histoire {
-    background-color: #e94e77;
-    color: #fff;
+    background: linear-gradient(to bottom, #f29aa5, #e66d8d);
+    border-color: #e66d8d;
 }
 
 .card_top_tag.Médias-Sociaux {
-    background-color: #f5a623;
-    color: #fff;
+    background: linear-gradient(to bottom, #f7d19b, #f0c278);
+    border-color: #f0c278;
 }
 
 .card_top_tag.Bien-être {
-    background-color: #7ed321;
-    color: #fff;
+    background: linear-gradient(to bottom, #b8e191, #9cd164);
+    border-color: #9cd164;
 }
 
 .card_top_tag.Philosophie {
-    background-color: #50e3c2;
-    color: #fff;
+    background: linear-gradient(to bottom, #b3ece0, #8de0ce);
+    border-color: #8de0ce;
 }
 
 .card_top_tag.Psychologie-Animale {
-    background-color: #b8e986;
-    color: #000;
+    background: linear-gradient(to bottom, #d2aef6, #b76ae8);
+    border-color: #b76ae8;
 }
 
 .card_top_tag.Technologie {
-    background-color: #d0021b;
-    color: #fff;
+    background: linear-gradient(to bottom, #d4a6ad, #c48088);;
+    border-color: #c48088;
 }
 
 .card_top_tag.Science {
-    background-color: #8b572a;
-    color: #fff;
+    background: linear-gradient(to bottom, #aa9684, #8b7968);
+    border-color: #8b7968;
 }
 
 /************* COLOR_TAG FINISH****************/
@@ -95,11 +95,17 @@
     margin-bottom: 2rem;
 }
 
-.card_date {
+.card_date_wrapper {
+    display: flex;
     width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.card_date {
+    
     font-style: italic;
     color: rgb(83, 81, 81);
     display: flex;
-    justify-content: end;
     font-size: 0.8em;
 }

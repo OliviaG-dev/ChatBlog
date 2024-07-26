@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import Header from './components/header/header';
 import Home from './pages/home/home';
 import Post from './pages/post/post';
 import Search from './pages/search/search';
@@ -9,6 +10,7 @@ import Page404 from './utils/page404/page404';
 function App() {
   return (
     <>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<Post />} />

@@ -39,12 +39,14 @@ function Home() {
               </div>
             </div>
             <p className="card_content">{post.content}</p>
-            <p className="card_date">Créé le: {formatDate(post.createdAt)}</p>
-            {post.updatedAt && post.updatedAt !== post.createdAt && (
-              <p className="card_date">
-                Mis à jour le: {formatDate(post.updatedAt)}
-              </p>
-            )}
+            <div className="card_date_wrapper">
+              <p className="card_date">Créé le: {formatDate(post.createdAt)}</p>
+              {post.updatedAt && post.updatedAt !== post.createdAt && (
+                <p className="card_date">
+                  Mis à jour le: {formatDate(post.updatedAt)}
+                </p>
+              )}
+            </div>
           </article>
         ))}
       </div>

@@ -1,0 +1,20 @@
+header {
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_title {
+    margin: 0 1rem;
+    letter-spacing: 0.2ch;
+}
+
+/***********RESPONSIVE***********/
+
+@media (max-width: 600px) {
+    .header_img {
+        display: none;
+    }
+}

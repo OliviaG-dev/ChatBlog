@@ -6,7 +6,7 @@ const Page404 = () => {
   return (
     <div className="wrapper_nofound">
       <div className="nofound">
-        <h1>Page non trouvée</h1>
+        <h2>Page non trouvée</h2>
         <div className="container_nofound">
           <img src={nofound} alt="teemo" className="nofound_image" />
           <div className="nofound_text">
