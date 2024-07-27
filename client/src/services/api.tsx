@@ -24,3 +24,8 @@ export const updatePost = async (
 export const deletePost = async (id: string): Promise<void> => {
   await axios.delete(`${API_URL}/${id}`);
 };
+
+export const createPost = async (newPost: Post): Promise<Post> => {
+  const response = await axios.post<Post>(`${API_URL}/`, newPost);
+  return response.data;
+};

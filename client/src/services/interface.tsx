@@ -18,3 +18,8 @@ export interface EditModalProps {
   onSave: (updatedPost: Post) => void;
   onClose: () => void;
 }
+
+export interface ModalProps {
+  message: string;
+  onClose: () => void;
+}

@@ -23,6 +23,7 @@
 }
 
 .search_tags {
+    padding: 0 0.5rem;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -31,6 +32,11 @@
 
 .search_tag {
     cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.search_post {
+    margin: 0 0.5rem;
 }
 
 .search_nofound {
@@ -43,4 +49,5 @@
 
 .search_nofound_img {
     height: 3rem;
+    margin-left: 1rem;
 }
