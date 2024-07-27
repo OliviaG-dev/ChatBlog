@@ -1,0 +1,33 @@
+.post_container {
+    padding: 0.5rem;
+}
+
+.post_button {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.secondLink {
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    color: #9b733f;
+    border: 2px black solid;
+    border: 1px solid #9b733f;
+    border-radius: 1rem;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0)); 
+    border-radius: 1rem;
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;
+    box-sizing: border-box;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.secondLink:focus:not(:focus-visible),
+.secondLink:focus {
+    outline: 0;
+}
+
+.secondLink:hover {
+    border-color: #b46900;
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(175, 116, 7, 0.5) 0 0 0 .2rem;
+}
+

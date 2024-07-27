@@ -7,3 +7,20 @@ export const fetchPosts = async (): Promise<Post[]> => {
   const response = await axios.get<Post[]>(`${API_URL}/`);
   return response.data;
 };
+
+export const fetchPostById = async (id: string): Promise<Post> => {
+  const response = await axios.get<Post>(`${API_URL}/${id}`);
+  return response.data;
+};
+
+export const updatePost = async (
+  id: string,
+  updatedPost: Post
+): Promise<Post> => {
+  const response = await axios.put<Post>(`${API_URL}/${id}`, updatedPost);
+  return response.data;
+};
+
+export const deletePost = async (id: string): Promise<void> => {
+  await axios.delete(`${API_URL}/${id}`);
+};

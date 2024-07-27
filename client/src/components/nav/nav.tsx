@@ -17,22 +17,12 @@ function Nav() {
         </li>
         <li>
           <NavLink
-            to="/:id"
-            className={({ isActive }) =>
-              isActive ? 'activeLink' : 'inactiveLink'
-            }
-          >
-            Post
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/search"
             className={({ isActive }) =>
               isActive ? 'activeLink' : 'inactiveLink'
             }
           >
-            Search
+            Rechercher
           </NavLink>
         </li>
         <li>
