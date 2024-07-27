@@ -1,0 +1,46 @@
+.search_title {
+    letter-spacing: 0.08ch;
+}
+
+.search_searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.search_searchbar_img { 
+    height: 3rem;
+    margin-right: 2rem;
+}
+
+.search_searchbar_input {
+    height: 3rem;
+    width: 15rem;
+    padding: 0 1rem;
+    border: 0.1rem solid #9b733f;
+    border-radius: 5px;
+}
+
+.search_tags {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.search_tag {
+    cursor: pointer;
+}
+
+.search_nofound {
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+}
+
+.search_nofound_img {
+    height: 3rem;
+}
