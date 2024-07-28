@@ -22,7 +22,7 @@
     letter-spacing: 0.08ch;
 }
 
-.editmodal_content form label {
+.editmodal_label {
     display: block;
     margin: 3rem 0;
     text-align: start;
@@ -30,8 +30,7 @@
     font-weight: 700;
 }
 
-.editmodal_content form input,
-.editmodal_content form textarea {
+.editmodal_input {
     width: 100%;
     padding: 0.8rem;
     margin-top: 0.5rem;

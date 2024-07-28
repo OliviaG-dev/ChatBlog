@@ -23,3 +23,10 @@ export interface ModalProps {
   message: string;
   onClose: () => void;
 }
+
+export interface PaginationProps {
+  postsPerPage: number;
+  totalPosts: number;
+  paginate: (pageNumber: number) => void;
+  currentPage: number;
+}
