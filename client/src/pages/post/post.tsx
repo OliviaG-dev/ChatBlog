@@ -6,11 +6,14 @@ import { Post as PostInterface } from '../../services/interface';
 import Nav from '../../components/nav/nav';
 import EditModal from '../../components/editModal/editModal';
 import Card from '../../components/card/card';
+import Modal from '../../components/modal/modal';
 
 function Post() {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<PostInterface | null>(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState<string | null>(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false); // Nouvel état pour la modal de suppression
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,7 +43,8 @@ function Post() {
     if (id) {
       try {
         await deletePost(id);
-        navigate('/');
+        setModalMessage('Post supprimé avec succès!');
+        setIsDeleteModalOpen(true); // Ouvrir la modal de suppression
       } catch (error) {
         console.error(`Error deleting post with ID ${id}:`, error);
       }
@@ -53,10 +57,17 @@ function Post() {
         const data = await updatePost(id, updatedPost);
         setPost(data);
         setIsEditModalOpen(false);
+        navigate('/');
       } catch (error) {
         console.error(`Error updating post with ID ${id}:`, error);
       }
     }
+  };
+
+  const handleDeleteModalClose = () => {
+    setModalMessage(null);
+    setIsDeleteModalOpen(false);
+    navigate('/'); // Naviguer après la fermeture de la modal
   };
 
   if (!post) return <div>Loading...</div>;
@@ -82,6 +93,10 @@ function Post() {
           />
         )}
       </div>
+
+      {modalMessage && isDeleteModalOpen && (
+        <Modal message={modalMessage} onClose={handleDeleteModalClose} />
+      )}
     </>
   );
 }

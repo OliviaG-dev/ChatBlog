@@ -7,7 +7,7 @@ import { CardProps } from '../../services/interface';
 const Card: React.FC<CardProps> = ({ post, getCategoryClass }) => {
   return (
     <article className="card">
-      <Link to={`/${post._id}`}>
+      <Link className="card_link" to={`/${post._id}`}>
         <h2 className="card_title">{post.title}</h2>
         <div className="card_top">
           <p className="card_top_author">
