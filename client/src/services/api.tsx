@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Post } from './interface';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://chatblog-0b3c3633e477.herokuapp.com/';
 
 export const fetchPosts = async (): Promise<Post[]> => {
   const response = await axios.get<Post[]>(`${API_URL}/`);
