@@ -24,12 +24,17 @@ function Search() {
 
   useEffect(() => {
     if (searchTerm || selectedCategory) {
-      const filtered = posts.filter(
-        (post) =>
-          (post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            post.author.toLowerCase().includes(searchTerm.toLowerCase())) &&
-          (!selectedCategory || post.category === selectedCategory)
-      );
+      const filtered = posts.filter((post) => {
+        const titleMatch =
+          post.title?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false;
+        const authorMatch =
+          post.author?.toLowerCase().includes(searchTerm.toLowerCase()) ??
+          false;
+        const categoryMatch =
+          !selectedCategory || post.category === selectedCategory;
+
+        return (titleMatch || authorMatch) && categoryMatch;
+      });
       setFilteredPosts(filtered);
       setSearchDone(true);
     } else {
@@ -38,11 +43,14 @@ function Search() {
   }, [searchTerm, selectedCategory, posts]);
 
   const uniqueCategories = Array.from(
-    new Set(posts.map((post) => post.category))
+    new Set(posts.map((post) => post.category).filter(Boolean))
   );
 
-  const getCategoryClass = (category: string) => {
-    const categoryClass = category.replace(/\s+/g, '-'); // Remplacer les espaces par des tirets pour la classe CSS
+  const getCategoryClass = (category: string | undefined) => {
+    if (!category || typeof category !== 'string') {
+      return 'card_top_tag';
+    }
+    const categoryClass = category.replace(/\s+/g, '-');
     return `card_top_tag ${categoryClass}`;
   };
 

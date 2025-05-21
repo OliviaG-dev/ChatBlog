@@ -4,8 +4,13 @@ import { Post } from './interface';
 const API_URL = 'http://localhost:5000';
 
 export const fetchPosts = async (): Promise<Post[]> => {
-  const response = await axios.get<Post[]>(`${API_URL}/`);
-  return response.data;
+  try {
+    const response = await axios.get<Post[]>(`${API_URL}/`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return [];
+  }
 };
 
 export const fetchPostById = async (id: string): Promise<Post> => {

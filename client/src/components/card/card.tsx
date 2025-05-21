@@ -5,6 +5,7 @@ import { formatDate } from '../../utils/formatDates';
 import { CardProps } from '../../services/interface';
 
 const Card: React.FC<CardProps> = ({ post, getCategoryClass }) => {
+  console.log('Card post data:', post); // Debug log
   return (
     <article className="card">
       <Link className="card_link" to={`/${post._id}`}>
@@ -14,7 +15,11 @@ const Card: React.FC<CardProps> = ({ post, getCategoryClass }) => {
             <span className="card_top_author-span">Auteur : </span>
             {post.author}
           </p>
-          <div className={getCategoryClass(post.category)}>{post.category}</div>
+          {post.category && typeof post.category === 'string' && (
+            <div className={getCategoryClass(post.category)}>
+              {post.category}
+            </div>
+          )}
         </div>
         <p className="card_content">{post.content}</p>
         <div className="card_date_wrapper">
