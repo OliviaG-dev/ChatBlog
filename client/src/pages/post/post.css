@@ -1,33 +1,254 @@
 .post_container {
-    padding: 0.5rem;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--surface-color);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.post_content {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+.post_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.post_meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--background-color);
+  border-radius: var(--border-radius-lg);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.post_author {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.post_date {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post_date::before {
+  content: '📅';
+  font-size: 1rem;
+}
+
+.post_tag {
+  border: solid 2px;
+  border-radius: var(--border-radius-lg);
+  padding: 0.4rem 1.2rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: all var(--transition-normal);
+}
+
+.post_tag:hover {
+  transform: scale(1.05);
+}
+
+/* Styles pour les tags (réutiliser les styles des cartes) */
+.post_tag.Science-fiction {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
+  border-color: var(--accent-blue);
+  color: white;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.post_tag.Histoire {
+  background: linear-gradient(135deg, var(--accent-pink) 0%, #be185d 100%);
+  border-color: var(--accent-pink);
+  color: white;
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+}
+
+.post_tag.Médias-Sociaux {
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #d97706 100%);
+  border-color: var(--accent-orange);
+  color: white;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.post_tag.Bien-être {
+  background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+  border-color: var(--accent-green);
+  color: white;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.post_tag.Philosophie {
+  background: linear-gradient(135deg, var(--accent-purple) 0%, #7c3aed 100%);
+  border-color: var(--accent-purple);
+  color: white;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+.post_tag.Psychologie-Animale {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border-color: #8b5cf6;
+  color: white;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+.post_tag.Technologie {
+  background: linear-gradient(135deg, var(--accent-red) 0%, #dc2626 100%);
+  border-color: var(--accent-red);
+  color: white;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.post_tag.Science {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  border-color: #6b7280;
+  color: white;
+  box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
 }
 
 .post_button {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
 }
 
 .secondLink {
-    cursor: pointer;
-    padding: 0.5rem 2rem;
-    color: #9b733f;
-    border: 2px black solid;
-    border: 1px solid #9b733f;
-    border-radius: 1rem;
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0)); 
-    border-radius: 1rem;
-    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;
-    box-sizing: border-box;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .secondLink:focus:not(:focus-visible),
 .secondLink:focus {
-    outline: 0;
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 0.3);
 }
 
 .secondLink:hover {
-    border-color: #b46900;
-    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(175, 116, 7, 0.5) 0 0 0 .2rem;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(
+    135deg,
+    var(--primary-light) 0%,
+    var(--primary-color) 100%
+  );
 }
 
+.secondLink:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+/* Boutons spécifiques */
+.secondLink.edit {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color) 0%,
+    var(--secondary-dark) 100%
+  );
+}
+
+.secondLink.edit:hover {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-light) 0%,
+    var(--secondary-color) 100%
+  );
+}
+
+.secondLink.delete {
+  background: linear-gradient(135deg, var(--accent-red) 0%, #dc2626 100%);
+}
+
+.secondLink.delete:hover {
+  background: linear-gradient(135deg, #f87171 0%, var(--accent-red) 100%);
+}
+
+.secondLink.back {
+  background: linear-gradient(
+    135deg,
+    var(--text-secondary) 0%,
+    var(--text-muted) 100%
+  );
+}
+
+.secondLink.back:hover {
+  background: linear-gradient(
+    135deg,
+    var(--text-muted) 0%,
+    var(--text-secondary) 100%
+  );
+}
+
+/***********RESPONSIVE***********/
+
+@media (max-width: 768px) {
+  .post_container {
+    padding: 0.75rem;
+    margin: 0 0.5rem;
+  }
+
+  .post_title {
+    font-size: 1.5rem;
+  }
+
+  .post_content {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .post_meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .post_button {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondLink {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}

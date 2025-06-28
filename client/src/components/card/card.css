@@ -1,160 +1,259 @@
 .card {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #9b733f;
-    border-radius: 10px;
-    margin: 1rem 0;
-    padding: 0.5rem 2rem;
-    box-shadow: 0px 1px 10px 1px rgba(78, 78, 78, 0.5);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: var(--border-radius-xl);
+  margin: 1.5rem 0;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  background: var(--surface-color);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-purple)
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(99, 102, 241, 0.2);
 }
 
 .card_link {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .card:first-of-type {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .card:last-of-type {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .card_title {
-    letter-spacing: 0.08ch;
+  letter-spacing: 0.05em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 .card_top {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .card_top_author-span {
-    font-weight: 600;
-    font-style: normal;
-    color: #1c1c1c;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--text-primary);
 }
 
 .card_top_author {
-    font-style: italic;
-    color: rgb(83, 81, 81);
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 .card_top_tag {
-    border: solid 2px;
-    border-radius: 5px;
-    padding: 0.2rem 1rem;
-    letter-spacing: 0.1ch;
+  border: solid 2px;
+  border-radius: var(--border-radius-lg);
+  padding: 0.4rem 1.2rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
 }
 
 /************* COLOR_TAG ****************/
 
 .card_top_tag.Science-fiction {
-    background: linear-gradient(to bottom, #c1d7f1, #9dbde2);
-    border-color: #9dbde2;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, #1d4ed8 100%);
+  border-color: var(--accent-blue);
+  color: white;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .card_top_tag.Science-fiction.selected {
-    background:#fff;
-    color: #9dbde2;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
 }
 
 .card_top_tag.Histoire {
-    background: linear-gradient(to bottom, #f29aa5, #e66d8d);
-    border-color: #e66d8d;
+  background: linear-gradient(135deg, var(--accent-pink) 0%, #be185d 100%);
+  border-color: var(--accent-pink);
+  color: white;
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
 }
+
 .card_top_tag.Histoire.selected {
-    background: #fff;
-    color:#e66d8d;
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--accent-pink);
+  border-color: var(--accent-pink);
 }
 
 .card_top_tag.Médias-Sociaux {
-    background: linear-gradient(to bottom, #f7d19b, #f0c278);
-    border-color: #f0c278;
+  background: linear-gradient(135deg, var(--accent-orange) 0%, #d97706 100%);
+  border-color: var(--accent-orange);
+  color: white;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
 }
 
 .card_top_tag.Médias-Sociaux.selected {
-    background: #fff;
-    color:#f0c278;
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
 }
 
 .card_top_tag.Bien-être {
-    background: linear-gradient(to bottom, #b8e191, #9cd164);
-    border-color: #9cd164;
+  background: linear-gradient(135deg, var(--accent-green) 0%, #059669 100%);
+  border-color: var(--accent-green);
+  color: white;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 .card_top_tag.Bien-être.selected {
-    background: #fff;
-    color:#9cd164;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-green);
+  border-color: var(--accent-green);
 }
 
 .card_top_tag.Philosophie {
-    background: linear-gradient(to bottom, #b3ece0, #8de0ce);
-    border-color: #8de0ce;
+  background: linear-gradient(135deg, var(--accent-purple) 0%, #7c3aed 100%);
+  border-color: var(--accent-purple);
+  color: white;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
 
 .card_top_tag.Philosophie.selected {
-    background: #fff;
-    color:#8de0ce;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-purple);
+  border-color: var(--accent-purple);
 }
 
 .card_top_tag.Psychologie-Animale {
-    background: linear-gradient(to bottom, #d2aef6, #b76ae8);
-    border-color: #b76ae8;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  border-color: #8b5cf6;
+  color: white;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
 
 .card_top_tag.Psychologie-Animale.selected {
-    background: #fff;
-    color:#b76ae8;
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  border-color: #8b5cf6;
 }
 
 .card_top_tag.Technologie {
-    background: linear-gradient(to bottom, #d4a6ad, #c48088);;
-    border-color: #c48088;
+  background: linear-gradient(135deg, var(--accent-red) 0%, #dc2626 100%);
+  border-color: var(--accent-red);
+  color: white;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
 }
 
 .card_top_tag.Technologie.selected {
-    background: #fff;
-    color:#c48088;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent-red);
+  border-color: var(--accent-red);
 }
 
 .card_top_tag.Science {
-    background: linear-gradient(to bottom, #aa9684, #8b7968);
-    border-color: #8b7968;
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  border-color: #6b7280;
+  color: white;
+  box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
 }
 
 .card_top_tag.Science.selected {
-    background: #fff;
-    color:#8b7968;
+  background: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
+  border-color: #6b7280;
 }
-
 
 /************* COLOR_TAG FINISH****************/
 
 .card_content {
-    max-width: 100ch;
-    text-align:left;
-    margin-bottom: 2rem;
+  max-width: 100ch;
+  text-align: left;
+  margin: 1.5rem 0;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-size: 1rem;
 }
 
 .card_date_wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  align-items: center;
 }
 
 .card_date {
-    
-    font-style: italic;
-    color: rgb(83, 81, 81);
-    display: flex;
-    font-size: 0.8em;
+  font-style: italic;
+  color: var(--text-muted);
+  display: flex;
+  font-size: 0.85rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card_date::before {
+  content: '📅';
+  font-size: 1rem;
+}
+
+/***********RESPONSIVE***********/
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .card_title {
+    font-size: 1.3rem;
+  }
+
+  .card_top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .card_content {
+    font-size: 0.95rem;
+  }
 }

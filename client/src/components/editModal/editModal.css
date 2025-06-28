@@ -1,48 +1,151 @@
 .editmodal_container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
 }
 
 .editmodal_content {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    width: 35rem;
-    margin: 1rem 0;
+  background: var(--surface-color);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(60, 60, 120, 0.1);
+  width: 800px;
+  max-width: 98vw;
+  margin: auto;
+  border: none;
+  position: relative;
+  animation: modalSlideIn 0.4s ease-out;
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
-.editmodal_content {
-    letter-spacing: 0.08ch;
+
+.editmodal_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.editmodal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.editmodal_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .editmodal_label {
-    display: block;
-    margin: 3rem 0;
-    text-align: start;
-    font-size: 1.3em;
-    font-weight: 700;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.1rem;
 }
 
 .editmodal_input {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 0.5rem;
-    font-size: 0.7em;
-    font-weight: 500;
-    border: 0.1rem solid #9b733f;
-    border-radius: 5px;
-    field-sizing: content; /*nouvelle propiété géniallll*/
-    resize: vertical; /* Permet uniquement le redimensionnement vertical */
+  padding: 0.8rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid var(--text-muted);
+  font-size: 1rem;
+  background: #f6f8fa;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.editmodal_input:focus {
+  border-color: var(--primary-color);
+  background: #fff;
+}
+
+.editmodal_input:hover {
+  border-color: var(--primary-light);
+}
+
+/* Style spécial pour le textarea */
+.editmodal_input[type='textarea'],
+.editmodal_input[as='textarea'] {
+  min-height: 8rem;
+  line-height: 1.6;
 }
 
 .editModal_button {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.editModal_button button {
+  flex: 1;
+  min-width: 110px;
+  padding: 0.8rem 0;
+  border-radius: 0.7rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(60, 60, 120, 0.06);
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editModal_button .btn-save {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.editModal_button .btn-save:hover {
+  background: var(--primary-dark);
+}
+
+.editModal_button .btn-cancel {
+  background: #f3f4f6;
+  color: var(--primary-color);
+}
+
+.editModal_button .btn-cancel:hover {
+  background: #e0e7ef;
+  color: var(--primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .editmodal_content {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+  }
+  .editmodal_title {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+  .editModal_button {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .editModal_button button {
+    min-width: 90px;
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+  }
 }

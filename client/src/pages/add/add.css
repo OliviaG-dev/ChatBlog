@@ -1,46 +1,185 @@
 .add_title {
-    letter-spacing: 0.08ch;
+  letter-spacing: 0.05em;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .add_form {
-    margin: 0 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  background: var(--surface-color);
+  padding: 2rem;
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .form_group {
-    margin: 1.3rem 0;
-    display: flex;
-    flex-direction: column;
-    width: 45%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
 }
 
 .form_group_label {
-    text-align: start;
-    font-size: 1.3em;
-    font-weight: 700;
+  text-align: start;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .form_group_input {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    font-size: 1em;
-    font-weight: 500;
-    border: 0.1rem solid #9b733f;
-    border-radius: 5px;
-    field-sizing: content; /*nouvelle propiété géniallll*/
-    resize: vertical; /* Permet uniquement le redimensionnement vertical */
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 2px solid var(--text-muted);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--surface-color);
+  transition: all var(--transition-normal);
+  resize: vertical;
+  min-height: 3rem;
+}
+
+.form_group_input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 0.1);
+  transform: translateY(-1px);
+}
+
+.form_group_input:hover {
+  border-color: var(--primary-light);
+}
+
+/* Style spécial pour le textarea */
+.form_group textarea.form_group_input {
+  min-height: 8rem;
+  line-height: 1.6;
+}
+
+/* Style pour le select */
+.form_group select.form_group_input {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  appearance: none;
 }
 
 .add_form_button {
-    margin-bottom: 1rem;
+  margin: 2rem 0 1rem 0;
+  padding: 1rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.add_form_button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(
+    135deg,
+    var(--primary-light) 0%,
+    var(--primary-color) 100%
+  );
+}
+
+.add_form_button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+.add_form_button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 0.3);
+}
+
+/* Message de succès/erreur */
+.form_message {
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  margin: 1rem 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form_message.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+}
+
+.form_message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
 }
 
 /***********RESPONSIVE***********/
 
-@media (max-width: 750px) {
-    .form_group {
-        width: 80%;
-    }
+@media (max-width: 768px) {
+  .add_title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .add_form {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .form_group {
+    margin: 1rem 0;
+  }
+
+  .form_group_label {
+    font-size: 1rem;
+  }
+
+  .form_group_input {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .add_form_button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .add_form {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .form_group_input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
 }
